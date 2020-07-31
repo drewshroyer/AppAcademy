@@ -16,7 +16,6 @@ def phase_II_my_min(arr) #time comp = O(n)
         min = ele1 if ele1 <= min
     end
     min
-
 end
 
 
@@ -25,28 +24,23 @@ end
 # p phase_I_my_min(arr)
 # p phase_II_my_min(arr)
 
-def ph_I_largest_contiguous_subsum(list) # time comp O(n^2)
+def ph_I_largest_contiguous_subsum(list) # time comp: O(n^3) and space comp: O(n^3)
     arr = []
     i = 0
-    ans = []
-    while i < list.length
+    while i < list.length     # lines 30 - 37 == O(n^3)
         x = 0
-        while x < list.length
-
-            temp_arr = []
-            temp_arr << list[i..x] 
-            arr << temp_arr.flatten unless temp_arr.empty? # why is this still giving empty arr?
+        while x < list.length && x >= i 
+            arr << list[i..x]  
             x += 1
         end
         i += 1
     end
     result = []
-    ans = arr.reject {|ele| ele == []}
-    ans.each {|sub| result << sub.sum}
-    result.sort.last
+    arr.each {|sub| result << sub.sum}  # O(n^3)
+    result.sort.last  # O(n log(n))
 end
 
-def ph_2_largest_contiguous_subsum(list)
+def ph_2_largest_contiguous_subsum(list)   # time comp: O(n) and space comp of O(1)
     temp_sum, max_sum = list.first, list.first
     i = 1
     while i < list.length
