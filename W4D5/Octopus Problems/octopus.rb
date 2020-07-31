@@ -1,6 +1,4 @@
 
-
-
 def sluggish_octopus(arr)
     
     sorted = false
