@@ -28,13 +28,13 @@ def fourth_anagram?(str1, str2) # time comp = O(n), space comp == O(1)
     hash1 == hash2
 end
 
-def other_anagram?(str1, str2)
-    return false if str1.length != str2.length
-    hash = Hash.new(0)
-    str1.each_char {|char| hash[char] += 1}
-    str2.each_char {|char| hash[char] += 1}
-    hash.values.all?(&:even?)
-end
+# def other_anagram?(str1, str2)
+#     return false if str1.length != str2.length
+#     hash = Hash.new(0)
+#     str1.each_char {|char| hash[char] += 1}
+#     str2.each_char {|char| hash[char] += 1}
+#     hash.values.all?(&:even?)
+# end
 
 # p first_anagram?("gizmo", "sally")    #=> false
 # p first_anagram?("elvis", "lives")    #=> true
