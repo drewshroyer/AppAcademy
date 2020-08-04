@@ -11,23 +11,15 @@ class LRUCache
     end
 
     def add(el)
-        if self.count + 1 <= @max_size 
-            if @cache.include?(el)
-                @cache.delete_at(@cache.index(el))
-                @cache << el.to_s
-            else
-                @cache << el.to_s
-            end
-        else 
-            if @cache.include?(el)
-                @cache.delete_at(@cache.index(el))
-                @cache << el.to_s
-            else
-                @cache.shift << el.to_s
-            end
+        # adds element to cache according to LRU principle
+        if !@cache.index(el)
+          @cache.shift  
+          @cache << el
+        else
+          @cache.delete(el)
+          @cache << el
         end
-      # adds element to cache according to LRU principle
-    end
+    end    
 
     def show
         @cache
@@ -48,7 +40,7 @@ class LRUCache
 
   johnny_cache.add([1,2,3])
   johnny_cache.add(5)
-#    johnny_cache.add(-5)
+  johnny_cache.add(-5)
   johnny_cache.add({a: 1, b: 2, c: 3})
   johnny_cache.add([1,2,3,4])
   johnny_cache.add("I walk the line")

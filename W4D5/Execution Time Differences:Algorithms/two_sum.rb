@@ -5,7 +5,9 @@
 def two_sum?(arr, target_sum)
     hash = {}
     arr.each do |el|
-      return true if hash[target_sum - el]
+      if hash[target_sum - el]
+        return true 
+      end
       hash[el] = true
     end
     false
