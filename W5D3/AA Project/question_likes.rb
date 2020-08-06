@@ -22,6 +22,8 @@ class Question_likes
         data.map { |datum| Question_likes.new(datum) }
     end
 
+    
+
     def initialize(options)
         @id = options['id']
         @likes = options['likes']

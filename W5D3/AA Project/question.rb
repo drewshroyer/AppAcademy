@@ -1,6 +1,8 @@
 require_relative 'questionsdb'
 require_relative 'user'
 require_relative 'replies'
+require_relative 'question_follows'
+
 
 class Question
 
@@ -57,6 +59,11 @@ class Question
     def followers
         Question_follows.followers_for_question_id(self.id)
     end
+
+    def self.most_followed(n)
+        Question_follows.most_followed_questions(n)
+    end
+    
 end
 
 # q = Question.new('title' => 'How to write HTML?', 'body' => 'Will we have a lecture on this topic?', 'author_id' => (SELECT id FROM users WHERE 'fname' = 'Drew'))
