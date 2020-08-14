@@ -1,0 +1,33 @@
+<h1>Here is a Cat!</h1>
+
+<table> 
+    <thead>
+        <tr>
+            <th colspan="2">Cat Attributes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td> <%= @cat.name %> </td> 
+            </tr>
+            <tr>
+            <td>Color</td>
+            <td> <%= @cat.color %> </td> 
+            </tr>
+              <tr>
+             <td>Sex</td>
+             <td> <%= @cat.sex %> </td> 
+             </tr>
+              <tr>
+            <td>Description</td>
+            <td> <%= @cat.description %> </td> 
+            </tr>
+              <tr>
+            <td>Birthday</td>
+            <td> <%= @cat.birthday %> </td> 
+        </tr>
+    </tbody>
+</table>
+<a href="<%= cats_url(@cat.id) %>"><- Go Back </a> <br>
+<a href="<%= edit_cat_url(@cat.id) %>"><- Edit Cat </a>

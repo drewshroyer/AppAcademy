@@ -1,0 +1,46 @@
+
+<% if is_edit %>
+    <% action = cat_url(cat) %>
+    <% button_text = "Edit your cat!" %>
+<% else %>
+    <% action = cats_url %>
+    <% button_text = "Create a new cat" %>
+<% end %>
+
+<form action="<%= action %>" method="post">
+    <% if is_edit == true %>
+        <input type="hidden" name= "_method" value="patch" >
+    <% end %>
+
+    <label for="name">Name</label> 
+    <input type="text" name="cat[name]" id="name" value="<%= @cat.name%>"> <br> <br>
+
+    <label for="sex">Sex</label> 
+    <input type="radio" name="cat[sex]" id="male" value= "M" <%= "checked" if @cat.sex == "M" %>>
+    <label for="male">Male</label>
+    <input type="radio" name="cat[sex]" id="female" value= "F" <%= "checked" if @cat.sex == "F" %>>
+    <label for="female">Female</label> <br> <br>
+
+    <label for="color">Color</label> 
+    <select name="cat[color]" id="color">
+        <option disabled selected>Please Pick a color</option>
+        <option value="red" <%= @cat.color == "red" ? "selected" : "" %> >Red</option>
+        <option value="blue"<%= @cat.color == "blue" ? "selected" : "" %> >Blue</option>
+        <option value="green" <%= @cat.color == "green" ? "selected" : "" %> >Green</option> 
+        <option value="yellow" <%= @cat.color == "yellow" ? "selected" : "" %> >Yellow</option>
+        <option value="purple"  <%= @cat.color == "purple" ? "selected" : "" %> >Purple</option>
+        <option value="beige" <%= @cat.color == "beige" ? "selected" : "" %> >Beige</option> 
+    </select> <br><br>
+
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="cat[birthday]"
+    value="<%=@cat.birthday%>" 
+    min="2000-01-01" max="2020-12-31"> <br><br>
+
+    <label for="description">Description</label> 
+    <input type="textarea" name="cat[description]" id="description" value="<%= @cat.description%>"> 
+        <br> <br>
+        <input type="submit" value="Submit"> 
+
+</form>
+
