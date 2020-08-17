@@ -1,0 +1,12 @@
+<h1>ALL THE CATS</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li><a href="<%= cat_url(cat) %>"><%= cat.name %></a></li>
+  <% end %>
+</ul>
+
+<img src="https://www.treehugger.com/thmb/RAa_zOUjYV4GH3UrtQ31ioQGHBE=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__mnn__images__2016__05__cat-mutations-f6300cae887145fcb5994148abeaa8b5.jpg" alt="CAT">
+
+<h2> <a href="<%= new_cat_url %>">Create New Cat</a> </h2>
+

@@ -1,0 +1,40 @@
+// Place all the styles related to the Cats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+    background: hotpink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: lightskyblue;
+    font-family: futura;
+}
+
+img {
+    padding: 20px;
+    background-repeat: no-repeat;
+    border: 15px solid;
+    border-color: #60d089;
+    }
+
+a {
+    color: lightskyblue;
+    font-size: 18px;
+}
+
+a:hover {
+ color: #F2E59C;
+}
+
+.intro {
+    color: lightskyblue;
+    font: 32px; 
+}
+
+img {
+  width: 50%;
+  height: auto;
+}
