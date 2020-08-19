@@ -20,7 +20,6 @@ class Cat < ApplicationRecord
     validates :sex, inclusion: { in: %w(M F),
         message: "%{value} is not a valid sex" }    
 
-
     has_many :cat_rental_requests,
         primary_id: :id,
         foreign_key: :cat_id,

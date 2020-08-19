@@ -1,0 +1,9 @@
+<h1> USER EMAIL ADDRESS: <%= @email %> </h1>
+
+<body> WELCOME </body>
+
+<ul>
+    <% @users.each do |user| %>
+    <%= user.email %>
+     <% end %>
+</ul>

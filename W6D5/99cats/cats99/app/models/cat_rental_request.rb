@@ -33,7 +33,5 @@ class CatRentalRequest < ApplicationRecord
         
     end
 
-     
-
-
+    
 end

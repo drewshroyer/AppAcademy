@@ -1,0 +1,54 @@
+
+body {
+    background: black;
+    color: white;
+    font-family: futura;
+}
+
+h1 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    padding: 20px;
+    border: 15px solid;
+    border-color: #60d089;
+    }
+
+a {
+    color: white;
+    font-size: 18px;
+}
+
+a:hover {
+ color: #F2E59C;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 50px;
+  }
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
