@@ -1,0 +1,9 @@
+<h1> USERNAME: <%= @username %> </h1>
+
+<body> WELCOME </body>
+
+<ul>
+    <% @users.each do |user| %>
+    <%= user.username %>
+     <% end %>
+</ul>
