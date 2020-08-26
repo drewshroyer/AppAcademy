@@ -1,0 +1,33 @@
+/* PHASE 3: Layout */
+
+.outer_container {
+    /* left: 300px;  */
+    /* position: relative;   */
+    display: table; 
+    width: 900px;
+    height:900px;
+    border: 1px solid lightgray;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    background-color: white;
+}
+
+.content_sidebar {
+    /* left: 100px;  */
+    /* position: absolute;   */
+    display: table-cell; 
+    width: 15%;
+    vertical-align: top;
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+
+
+.content_main {
+    /* position: absolute;   */
+    display: table-cell; 
+    width: 85%;
+    vertical-align: top;
+    height: 100%;
+}
