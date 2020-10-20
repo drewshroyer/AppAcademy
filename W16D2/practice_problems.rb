@@ -44,3 +44,26 @@ def sum_from_file(filename)
     end 
     return sum
 end
+
+# You are given an array and a random number generator. Shuffle the array.
+
+#assume array of integers
+#make new array of empty strings; new array is same length of input array
+#since there can be repeats, I will also have to note the index of each element
+#iterate through input array, noting indices
+#if the new array does not include the target element, I will shovel it into the new array and simultaneously store that element's index
+    # in a "used element" array -- ex. [5,3,5,2], we need to know which 5 we're talking about
+
+def shuffle(array)
+    new_array = []
+    used_indices = []
+
+    while new_array.length < array.length
+       random_i = rand(0...array.length)
+       if !new_array.include?(array[random_i]) && !used_indices.include?(random_i)
+        new_array << array[random_i]
+        used_indices << random_i
+       end
+    end
+    new_array
+end
