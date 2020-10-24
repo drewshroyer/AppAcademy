@@ -67,3 +67,18 @@ def shuffle(array)
     end
     new_array
 end
+
+
+def shuffle(array)
+    new_array = []
+    used_indices = []
+
+    while new_array.length < array.length
+       random_i = rand(0...array.length)
+       if !new_array.include?(array[random_i]) && !used_indices.include?(random_i)
+        new_array << array[random_i]
+        used_indices << random_i
+       end
+    end
+    new_array
+end
