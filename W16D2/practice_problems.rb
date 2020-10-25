@@ -82,3 +82,17 @@ def shuffle(array)
     end
     new_array
 end
+
+
+def sum_from_file(filename)
+    nums = File.readlines(filename)
+    sum = 0
+    nums.each do |number|
+        if (number.to_s)[0] == "#"
+            sum += 0
+        else 
+            sum += number
+        end
+    end 
+    return sum
+end
